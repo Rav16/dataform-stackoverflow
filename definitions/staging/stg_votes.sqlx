@@ -7,7 +7,7 @@ config {
 select
   post_id,
   creation_date,
-  count(vote_type_id)
+  count(vote_type_id) as distinct_votes
 from
   ${ref("votes")}
   group by post_id, creation_date
